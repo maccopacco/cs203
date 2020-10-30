@@ -16,7 +16,7 @@ class Program1 {
      */
     private static List<Vertex> getVertices(String[] args) {
         if (args.length < 2) {
-            throw new IllegalArgumentException(String.format("%s required >= 2 inputs, received %d: %s", Program1.class.getSimpleName(), args.length, List.of(args)));
+            throw new IllegalArgumentException(String.format("%s required >= 2 inputs, received %d: %s", Program1.class.getSimpleName(), args.length, Arrays.asList(args)));
         }
 
         final int numberOfNodes;
