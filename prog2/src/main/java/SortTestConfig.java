@@ -8,6 +8,15 @@ public class SortTestConfig {
         this.size = size;
         this.low = low;
         this.high = high;
+
+        initializeArray();
+    }
+
+    public void initializeArray() {
+        array = new int[size];
+        for (int i = 0; i < size; i++) {
+            array[i] = getRandom();
+        }
     }
 
     public int getRandom() {
@@ -17,11 +26,6 @@ public class SortTestConfig {
     public int getSize() {
         return size;
     }
-
-    public void setArray(int[] array) {
-        this.array = array;
-    }
-
 
     public int[] getCopy() {
         int[] newArray = new int[array.length];

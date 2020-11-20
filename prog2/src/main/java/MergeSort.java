@@ -26,6 +26,7 @@ public class MergeSort implements ISortInterface {
 
             sortResult.addCopyArrayAssignment(size);
             //all items must be be assigned into two different arrays
+
             for (int i = 0; i < middle; i++) {
                 leftSide[i] = sort_array[i];
             }

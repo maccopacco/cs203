@@ -3,7 +3,7 @@ public class InsertionSort implements ISortInterface {
         SortResult sortResult = new SortResult();
         sortResult.startTiming();
 
-        for (int iteration = 0; iteration < size - 1; ++iteration) {
+        for (int iteration = 0; iteration < size; ++iteration) {
             //Value at iteration
             int v = sort_array[iteration];
 

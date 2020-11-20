@@ -27,7 +27,7 @@ public class QuickSort implements ISortInterface {
     }
 
     public static int Partition(SortResult sortResult, int[] sort_array, int low, int high) {
-        int pivot = sort_array[high];
+        int pivot = sort_array[high]; //simple pivot, chosen at last item
         int i = (low - 1);
 
         for (int j = low; j < high; j++) {
@@ -43,18 +43,6 @@ public class QuickSort implements ISortInterface {
         sortResult.addSwap();
         return i + 1;
     }
-    //p ← A[l]
-    //i ← l; j ← r + 1
-    //repeat
-    //repeat i ← i + 1 until A[i] ≥ p
-    //repeat j ← j − 1 until A[j ] ≤ p
-    //swap(A[i], A[j ])
-    //until i ≥ j
-    //swap(A[i], A[j ]) //undo last swap when i ≥ j
-    //swap(A[l], A[j ])
-    //return j
-    //
-    //Note that index
 
     private static void swap(int[] array, int i, int j) {
         int tempSwap = array[i];

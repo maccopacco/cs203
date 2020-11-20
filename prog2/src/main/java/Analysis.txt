@@ -1,0 +1,51 @@
+Averaging each test 50 times...
+n                  |   1000                          |   10000                         |   20000                         |   50000                         |
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+QuickSort          |   comps:              10892.6   |   comps:             154974.3   |   comps:             339624.6   |   comps:             931714.6   |
+                   |   ms:                 0.10572   |   ms:                 0.65516   |   ms:                 1.35212   |   ms:                 3.62875   |
+                   |   swaps:               6089.7   |   swaps:              85000.8   |   swaps:             182762.8   |   swaps:             510303.8   |
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+InsertionSort      |   comps:             250640.8   |   comps:           24978999.8   |   comps:          100045402.4   |   comps:          625029462.6   |
+                   |   ms:                 0.80302   |   ms:                22.45392   |   ms:                79.84183   |   ms:               520.38156   |
+                   |   swaps:             251640.8   |   swaps:           24988999.8   |   swaps:          100065402.4   |   swaps:          625079462.6   |
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+MergeSort          |   comps:              26114.6   |   comps:             361356.1   |   comps:             782613.5   |   comps:            2154498.5   |
+                   |   ms:                 0.26112   |   ms:                 1.48386   |   ms:                 2.72381   |   ms:                 7.14358   |
+                   |   swaps:               9976.0   |   swaps:             133616.0   |   swaps:             287232.0   |   swaps:             784464.0   |
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Entire program took 32.352 sec to run
+
+Mergesort is a divide an conquer algorithm.
+By definition, an empty list or list of 1 item is sorted.
+We can merge two lists by continually taking the smallest of both until we have one sorted list.
+Mergesort splits a list in half continually, and reassembles it in order.
+
+Insertion sort divides the array into unsorted and sorted portions.
+Insertion sort takes an item from the unsorted and places it in order in the sorted portion.
+It finds the location that it should place an unsorted item by iterating through the sorted
+portion to find a & b where a & b satisfy a <= x <= b.
+
+Quick sort works by selecting a pivot and putting all values less than the pivot to the left,
+all greater to the right, and recursively handling each half.
+Quick sort is similar to merge sort in theory and in average time complexity, but quicksort beats
+mergesort in space complexity as it only requires one variable as a placeholder during swaps.
+
+The best case of insertion sort is one that is already in order, and has complexity n.
+The best case complexity for merge sort = average = worst = n log n. For stable performance, merge sort
+would have benefits over insertion sort even though theres a chance insertion sort could out perform.
+The worse case for insertion sort is that of reverse sort.
+
+Another datapoint not shown in the table (yet collected, ran out of table formatting time), was the amount
+of swaps required to make a duplicate copy of part of an array, like in merge sort. At the end of the day,
+space and time are really what are relevant, but it'd be interesting to find out how much time was spent
+copying data and not directly making progress.
+
+The multiplicative constant came out to roughly 1/0.25 for insertionsort, as
+250640.8/1000^2 ~= 24978999.8/10000^2 ~= 625029462.6/50000^2 ~= 1/0.25
+
+Merge sort multiplicative constant ~= 2.7
+https://www.desmos.com/calculator/mus3bovfjd
+
+Quicksort multiplicative constant ~= 1.1
+https://www.desmos.com/calculator/ecaassr81g
+

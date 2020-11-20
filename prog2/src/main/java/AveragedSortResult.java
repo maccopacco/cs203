@@ -1,3 +1,4 @@
+
 public class AveragedSortResult {
     private final double durationNs;
     private final double comparisons;
